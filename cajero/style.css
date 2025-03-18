@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.atm-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.atm-frame {
+    position: relative;
+    width: 100%;
+    background-color: #515b72;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.atm-header {
+    text-align: right;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.atm-screen {
+    background-color: #374051;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    min-height: 350px;
+}
+
+.screen-content {
+    background-color: #a0e6ff;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.message {
+    background-color: #ff9999;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.good-message {
+    background-color: #99ff99;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form,
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.screen-button,
+.menu-button,
+.amount-button,
+.register-button,
+.back-button {
+    padding: 10px 15px;
+    background-color: #4c7daf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px 0;
+    justify-content: space-between;
+}
+
+.screen-button:hover,
+.menu-button:hover,
+.amount-button:hover,
+.register-button:hover,
+.back-button:hover {
+    background-color: #365980;
+}
+
+.menu-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.menu-options form:nth-child(1),
+.menu-options form:nth-child(3) {
+    grid-column: 1; /* Coloca "Retirar" y "Revisar Saldo" en la primera columna */
+}
+
+.menu-options form:nth-child(2),
+.menu-options form:nth-child(4) {
+    grid-column: 3; /* Coloca "Depositar" y "Logout" en la tercera columna */
+    text-align: right;
+}
+
+.amount-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.amount-options form:nth-child(1),
+.amount-options form:nth-child(3) {
+    grid-column: 1;
+}
+
+.amount-options form:nth-child(2),
+.amount-options form:nth-child(4) {
+    grid-column: 3;
+    text-align: right;
+}
+
+.back-button {
+    background-color: #6c757d;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.balance-display {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+.balance-amount {
+    font-weight: bold;
+    color: #0a6b0d;
+}
+
+.footer-message {
+    color: #ffffff;
+}
+
+.custom-amount-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.custom-amount-form .form-group {
+    margin-bottom: 15px;
+}
+
+.custom-amount-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.custom-amount-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.custom-amount-button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-amount-button:hover {
+    background-color: #45a049;
+}
+
+.receipt-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.print-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.print-button:hover {
+    background-color: #0056b3;
+}
+
+/* Print-specific styles */
+@media print {
+    .print-receipt {
+        font-family: Arial, sans-serif;
+        width: 80mm;
+        /* Standard receipt width */
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .print-receipt h1,
+    .print-receipt h2 {
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .print-receipt hr {
+        border: 1px dashed #ccc;
+        margin: 10px 0;
+    }
+
+    .print-receipt p {
+        margin: 5px 0;
+        font-size: 12px;
+    }
+
+    .atm-container,
+    .atm-frame,
+    .atm-keypad,
+    .atm-footer {
+        display: none !important;
+    }
+}
+
+.atm-keypad {
+    background-color: #374051;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.keypad-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.keypad-button {
+    width: 60px;
+    height: 40px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.keypad-button:hover {
+    background-color: #d0d0d0;
+}
+
+.keypad-button.empty {
+    background-color: transparent;
+    cursor: default;
+}
+
+.keypad-button.red {
+    background-color: #ff3333;
+    color: white;
+}
+
+.keypad-button.yellow {
+    background-color: #ffcc00;
+}
+
+.keypad-button.green {
+    background-color: #33cc33;
+    color: white;
+}
+
+.atm-slot {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.slot-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.bills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.bill-image {
+    width: 150px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid #ccc;
+}
+
+.bill-image:hover {
+    transform: scale(1.05);
+}
+
+.receipt-details {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-family: monospace;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .atm-container {
+        padding: 10px;
+    }
+
+    .keypad-button {
+        width: 45px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .menu-options,
+    .amount-options {
+        grid-template-columns: 1fr;
+    }
+
+    .bill-image {
+        width: 120px;
+        height: 56px;
+    }
+}

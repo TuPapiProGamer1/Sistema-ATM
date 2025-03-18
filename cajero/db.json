@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "pin": "1234",
+            "balance": 1000
+        },
+        {
+            "username": "Apsael",
+            "pin": "1610",
+            "balance": 35936
+        },
+        {
+            "username": "Fabricio",
+            "pin": "2025",
+            "balance": 240
+        },
+        {
+            "username": "Wewe",
+            "pin": "1105",
+            "balance": 100
+        },
+        {
+            "username": "Alex",
+            "pin": "8080",
+            "balance": 1300
+        },
+        {
+            "username": "Pe\u00f1a",
+            "pin": "1010",
+            "balance": 700
+        },
+        {
+            "username": "Carlos",
+            "pin": "2020",
+            "balance": 1000
+        }
+    ]
+}
